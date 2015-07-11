@@ -19,19 +19,13 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
 })
 
 .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
-    $translateProvider.translations('en', {
-        TITLE: "Hello",
-        TEXT_NAME: "Enter your name"
+
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'js/locale-',
+        suffix: '.json'
     });
-    $translateProvider.translations('es', {
-        TITLE: "Hola",
-        TEXT_NAME: "Introduzca su nombre"
-    });
-    $translateProvider.translations('pt', {
-        TITLE: "Olá",
-        TEXT_NAME: "Digite o seu nome"
-    });
-    $translateProvider.preferredLanguage("en");
+    $translateProvider.preferredLanguage('en');
+
 })
 
 .controller('MainCtrl', function($scope, $translate) {
