@@ -15,6 +15,9 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <!-- Angular translate -->
+    <script src="js/angular-translate.min.js"></script>
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -23,11 +26,16 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane>
+    <ion-pane ng-controller="MainCtrl">
       <ion-header-bar class="bar-stable">
         <h1 class="title">Ionic Blank Starter</h1>
       </ion-header-bar>
       <ion-content>
+        <h2 translate="TITLE">Hello</h2>
+        <input type="text" ng-model="name" placeholder="{{ 'TEXT_NAME' | translate }}">
+        <button class="button" ng-click="ChangeLanguage('en')">EN</button>
+        <button class="button" ng-click="ChangeLanguage('es')">ES</button>
+        <button class="button" ng-click="ChangeLanguage('pt')">BR</button>
       </ion-content>
     </ion-pane>
   </body>
