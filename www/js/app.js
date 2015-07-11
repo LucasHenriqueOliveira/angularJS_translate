@@ -29,6 +29,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
 })
 
 .controller('MainCtrl', function($scope, $translate) {
+    $scope.language = 'en';
 
     $scope.ChangeLanguage = function(lang){
         $translate.use(lang);

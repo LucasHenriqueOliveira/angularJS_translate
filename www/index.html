@@ -34,9 +34,13 @@
       <ion-content>
         <h2 translate="TITLE">Hello</h2>
         <input type="text" ng-model="name" placeholder="{{ 'TEXT_NAME' | translate }}">
-        <button class="button" ng-click="ChangeLanguage('en')">EN</button>
-        <button class="button" ng-click="ChangeLanguage('es')">ES</button>
-        <button class="button" ng-click="ChangeLanguage('pt')">BR</button>
+
+        <select ng-model="language" ng-change="ChangeLanguage(language)">
+          <option value="en" ng-selected="selected">EN</option>
+          <option value="es">ES</option>
+          <option value="pt">PT</option>
+        </select>
+
       </ion-content>
     </ion-pane>
   </body>
